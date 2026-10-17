@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#2457d6">
+  <meta name="description" content="Asistente familiar para tareas escolares">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>TareaFácil</title>
+</head>
+<body>
+<header class="topbar">
+  <div class="brandmark">TF</div>
+  <div><h1>TareaFácil</h1><p>Tu compañero de aprendizaje</p></div>
+  <button id="installBtn" class="install hidden" type="button">Instalar</button>
+</header>
+<main>
+  <section class="hero">
+    <span class="eyebrow">APRENDE A TU RITMO</span>
+    <h2>¿Qué tarea hacemos hoy?</h2>
+    <p>Escribe una pregunta o pega las instrucciones. Te ayudaremos a entenderlas y resolverlas paso a paso.</p>
+  </section>
+
+  <section class="panel">
+    <label for="subject">Materia</label>
+    <select id="subject">
+      <option>General</option><option>Matemáticas</option><option>Español</option>
+      <option>Ciencias naturales</option><option>Historia</option><option>Geografía</option>
+      <option>Inglés</option><option>Formación cívica y ética</option>
+      <option>Informática</option><option>Preparatoria / universidad</option>
+    </select>
+    <label for="level">Nivel escolar</label>
+    <select id="level">
+      <option>Primaria</option><option>Secundaria</option><option>Preparatoria</option>
+      <option>Universidad</option><option>Otro</option>
+    </select>
+    <label for="task">Escribe tu tarea</label>
+    <textarea id="task" rows="6" placeholder="Ejemplo: Explica el ciclo del agua con palabras sencillas y da 3 ejemplos..."></textarea>
+    <div class="actions">
+      <button id="solveBtn" class="primary" type="button">Ayúdame con la tarea</button>
+      <button id="clearBtn" class="secondary" type="button">Limpiar</button>
+    </div>
+    <p class="hint">Consejo: incluye las instrucciones completas y el formato que te pidió tu profesor.</p>
+  </section>
+
+  <section id="answerPanel" class="panel answer hidden" aria-live="polite">
+    <div class="answerHead"><h2>Respuesta y explicación</h2><button id="copyBtn" class="secondary" type="button">Copiar</button></div>
+    <div id="answer" class="answerText"></div>
+    <p class="hint">Revisa los datos y adapta la respuesta con tus propias palabras antes de entregarla.</p>
+  </section>
+
+  <section class="panel setup">
+    <h2>Conectar una IA (opcional)</h2>
+    <p>La app trae un modo de demostración gratuito. Para respuestas generadas por IA real, configura un pequeño servidor con un proveedor compatible. No pegues una clave secreta aquí ni la guardes en esta página pública.</p>
+    <details>
+      <summary>¿Cómo activar IA real?</summary>
+      <ol>
+        <li>Publica el frontend y un servidor backend seguro.</li>
+        <li>Guarda la clave de API como variable secreta en el backend, nunca en el navegador.</li>
+        <li>Configura la ruta del servidor en el código de la app (se explica en el README).</li>
+      </ol>
+    </details>
+  </section>
+</main>
+<footer>Hecha para aprender • Guarda tus tareas en este dispositivo</footer>
+<script src="app.js"></script>
+</body>
+</html>
